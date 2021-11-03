@@ -1,0 +1,137 @@
+
+@import url(http://fonts.googleapis.com/css?family=Play:400,700);
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Play', sans-serif !important;
+    color: #484757;
+    background: url(../images/body_pattern.png) repeat top center;
+}
+.navbar{
+    background: linear-gradient(#04519b,#033c73 60%,#02325f);
+    background-repeat: no-repeat;
+    display: flex;
+}
+.container-header{
+    display: flex;
+    width: 70%;
+    margin: auto;
+    justify-content: space-between;
+}
+a{
+    width: 50%;
+    text-align: center;
+    color: white;
+    display: inline-block;
+    padding-top: 0.3125rem;
+    padding-bottom: 0.3125rem;
+    margin-right: 1rem;
+    font-size: 1.25rem;
+    line-height: inherit;
+    white-space: nowrap;
+    text-decoration: none;
+}
+a:hover{
+    color: rgb(41, 165, 223);
+}
+.converter-a{
+    color: rgb(240, 151, 151);
+}
+h1 {
+    color: #323296;
+    font-size: 22px;
+    margin: 5px 0;
+}
+.h3, h3 {
+    font-size: 20px;
+}
+h2 {
+    color: #323296 !important;
+    font-size: 20px !important;
+    margin: 15px 0 !important;
+    font-weight: bold;
+}
+strong {
+    color: #484757;
+    font-size: 14px;
+}
+p {
+    font-weight: normal;
+}
+.navbar {
+    min-height: 100px;
+}
+.top-space {
+    margin-top: 27px;
+}
+
+.fahrenheit-shadow {
+    display: flex;
+    width: auto;
+    height: auto;
+    border-radius: 4px;
+    padding: 2%;
+    flex-direction: column;
+    align-items: center;
+}
+.cont{
+    width: 30%;
+    margin: auto;
+    padding: 1%;
+    display: flex;
+    justify-content: center;
+    background: white;
+    box-shadow: 0px 0px 11px 0px rgb(50 50 50 / 41%);
+}
+.cont div{
+    width: 50%;
+}
+.converter_bg {
+    background: #e5e5e4;
+    border: #f7f7f7 solid 5px;
+    text-align: center;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3%;
+}
+input{
+    border-radius: 5px;
+    margin-bottom: 3%;
+}
+.bbtn{
+    background: #323296;
+    border: 0;
+    color: #fff;
+    text-shadow: none;
+    height: 42px;
+    width: 116px;
+    margin: 10px auto;
+    font-style: normal;
+    border-radius: 5px;
+}
+.convert-btn:hover {
+    color: #fff;
+}
+.frn-text-box {
+    width: 140px;
+    text-align: center;
+    height: 44px;
+    border: #d4d4ca solid 1px;
+    padding-left: 5px;
+}
+
+.frn-smal-text-box {
+    border: 1px solid #d4d4ca;
+    height: 44px;
+    padding-left: 5px;
+    text-align: center;
+    width: 102px;
+    margin-top: 5px;
+}
+.desktop-menu-view h1,.desktop-menu-view p  {
+    text-align: center;
+}

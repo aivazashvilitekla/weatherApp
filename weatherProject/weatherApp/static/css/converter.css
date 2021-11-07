@@ -113,6 +113,9 @@ input{
     font-style: normal;
     border-radius: 5px;
 }
+.bbtn:hover{
+    background: #4f4fd8;
+}
 .convert-btn:hover {
     color: #fff;
 }

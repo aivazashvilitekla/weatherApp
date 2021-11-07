@@ -1,4 +1,5 @@
 from django.shortcuts import render
+
 import urllib.request
 import json
 from weatherApp.DB import methods
@@ -36,22 +37,35 @@ def index(request):
 
 
 def converter(request):
-    if request.method == 'POST':
-        data = request.POST.get('')
-    return render(request, 'main/converter.html')
-
-def statistics(request):
     # if request.method == 'POST':
     #     data = request.POST.get('')
-    # dt = methods.getViewed()
-    
+    values = {"c":"sfsdfs"}
+    if request.method == 'POST':
+        f = request.POST['F']
+        c = request.POST['F']
+        values["fah"] = f
+        # if request.POST.get("fah"):
+        #     fah = form.cleaned_data.get("F")
+        #     # cel = form.cleaned_data.get("C")
+        #     values["fah"] = fah
+        #     # values["cel"] = cel
+        #     # c = (fah - 32) * 5 / 9
+        #     # cel.initial['C'] = c
+            
+        # elif request.POST.get("cel"):  
+        #     cel = form.cleaned_data.get("C")
+
+
+    # context= {'fah': fah, 'cel':cel}
+    return render(request, 'main/converter.html', values)
+
+def statistics(request):
     sqliteConnection = sqlite3.connect('../../../weatherDB.db')
     c = sqliteConnection.cursor()
     c.execute("select city, Country_Code, Coordinate, Temperature, Pressure, Humidity, Forecast, Description, COUNT(city) as ct from weatherDB group by city order by ct DESC LIMIT 1")
 
     
     dt = c.fetchall()
-    # 
     
     context = dict()
     for row in dt:
@@ -64,7 +78,7 @@ def statistics(request):
         context["Forecast"] = row[6]
         context["Description"] = row[7]
 
-    c.execute("SELECT Temperature, Date FROM weatherDB ORDER BY Date ASC")
+    c.execute("SELECT Temperature, Date FROM weatherDB WHERE city='" + context['city'] + "' ORDER BY Date ASC")
     dt = c.fetchall()
     context["start_date"] = dt[0][1]
     context["end_date"] = dt[len(dt)-1][1]
@@ -73,8 +87,6 @@ def statistics(request):
     for row in dt:
         temps.append(row[0])
         dates.append(row[1])
-# 
-# 
     x_data = dates
     y_data = temps
     plot_div = plot([Scatter(x=x_data, y=y_data,
@@ -82,7 +94,4 @@ def statistics(request):
                             opacity=0.8, marker_color='green')],
                 output_type='div')
     context["plot_div"] = plot_div
-
-
-# 
     return render(request, 'main/statistics.html',context)

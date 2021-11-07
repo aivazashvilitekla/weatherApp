@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Converter</title>
-    
     <link rel="stylesheet" href="../../static/css/converter.css">
 </head>
 <body>
@@ -17,16 +16,15 @@
         </div>
       </div>
     <main>
+        <h2>{{fah}}</h2>
         <section>
             <div class="container">
-                <!--Normal Menu View Starts Here */-->
                 <div class="row desktop-menu-view">
                     <div class="col-md-12">
     
                         <div class="col-md-6 col-sm-12 col-xs-12">
-                            <!-- Nav tabs -->
                             <div>
-                                <form action="" method="post">
+                                <form method="post">
                                     {% csrf_token %}
                                     <h1>Temperature Converter</h1>
                                     <p class="mobileSubtitle">Fahrenheit to Celsius Conversion, Celsius to Fahrenheit Conversion</p><br>
@@ -34,14 +32,14 @@
                                         <div class="cont">
                                             <div class="col-md-6 col-sm-6 col-xs-6 converter_bg">
                                                 <h3>Fahrenheit </h3>
-                                                <input type="text" maxlength="12" placeholder="" name="F" id="FahrenheitValue" class="frn-text-box">
-                                                <button type="button" class="bbtn" id="fah">Convert</button>
+                                                <input type="text" name="F" id="FahrenheitValue" class="frn-text-box">
+                                                <button type="button" class="bbtn" name="fah" id="fah">Convert</button>
                                             </div> 
         
                                             <div class="col-md-6 col-sm-6 col-xs-6 converter_bg">
                                                 <h3>Celsius</h3>
-                                                <input type="text" maxlength="12" placeholder="" name="C" id="CelsiusValue" class="frn-text-box">
-                                                <button type="button" class="bbtn" id="cel">Convert</button>
+                                                <input type="text" name="C" id="CelsiusValue" class="frn-text-box">
+                                                <button type="button" class="bbtn" name="cel" id="cel">Convert</button>
                                             </div> 
                                         </div>
                                         <div class="clear">
@@ -61,6 +59,7 @@
         </section>
     </main>
     <script>
+        
         let fah_value = document.getElementById('FahrenheitValue');
         let cel_value = document.getElementById('CelsiusValue');
 

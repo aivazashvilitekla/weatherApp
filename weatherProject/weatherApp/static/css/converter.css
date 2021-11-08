@@ -112,6 +112,7 @@ input{
     margin: 10px auto;
     font-style: normal;
     border-radius: 5px;
+    cursor: pointer;
 }
 .bbtn:hover{
     background: #4f4fd8;

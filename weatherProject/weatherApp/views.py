@@ -39,11 +39,15 @@ def index(request):
 def converter(request):
     # if request.method == 'POST':
     #     data = request.POST.get('')
-    values = {"c":"sfsdfs"}
-    if request.method == 'POST':
-        f = request.POST['F']
-        c = request.POST['F']
-        values["fah"] = f
+    values = {"c":"d"}
+    values["check"] = request.method == 'POST'
+    if request.method == 'POST' and 'fah' in request.POST:
+        values["test"] = "test"
+    # if request.method == 'POST':
+    #     values["test"] = "test"
+    #     if request.POST['fah']:
+    #         values["fah"] = "dsds"
+            # c = request.POST['F']
         # if request.POST.get("fah"):
         #     fah = form.cleaned_data.get("F")
         #     # cel = form.cleaned_data.get("C")
